@@ -89,6 +89,9 @@ L'objectif est que vous ayez un suivi de votre acte quotidien
 ### Homeless
 - Prénom
 - Nom ?
+- List<Video> Videos
+- List<Fan> Fans
+- List<Don> Dons
 - 
 ### Fan
 

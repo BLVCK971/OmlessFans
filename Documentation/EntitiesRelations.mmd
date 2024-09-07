@@ -1,0 +1,64 @@
+classDiagram
+  class Omless{
+    +Guid Id
+    +String Nom
+    +List<Fan> Fans
+    +List<Video> Videos
+    +List<Don> Dons
+  }
+  class Fan{
+    +Guid Id
+    +String Nom
+    +String Prenom
+    +List<Don> DonsFaits
+  }
+
+  class Video{
+    +Int Id
+    +String Title
+    +String Description
+    +String Url
+    //Base64 Thumbnail
+    //Int Views
+    //Int Likes
+    
+    +Guid OmlessId
+    +Omless Omless
+  }
+
+  class Don{
+    +Guid Id
+    +Float Amount
+    +Guid OmlessId
+    +Omless OmlessGiven
+  }
+
+  class BaseEntity{
+  --Abstract
+  +DateTime CreatedAt
+  +DateTime UpdatedAt
+  +Guid CreatedByUserId
+  +User CreatedByUser
+  +Guid UpdatedByUserId
+  +User UpdatedByUser
+  }
+
+  class User{
+    
+  }
+  class Association{
+    
+  }
+  <<Abstract>> User
+  User <|-- Fan
+  User <|-- Omless
+  User <|-- Mediator
+  User <|-- Admin
+
+  Video o-->"1" Omless
+  Don o-->"1" Omless
+  Don o-->"1" Fan
+
+
+  Omless o--o Fan
+  Association o--o Mediator
