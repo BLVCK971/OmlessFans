@@ -1,0 +1,13 @@
+
+#boto3
+slowapi
+pytest
+starlette
+httpx
+pydantic
+
+asyncio
+pytest-asyncio
+
+uvicorn[standard]
+fastapi[all]

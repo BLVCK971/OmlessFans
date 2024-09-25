@@ -1,0 +1,45 @@
+Table Fan as F{
+  id int [pk, increment]
+  email varchar
+  password varchar
+  nom str
+  prenom str
+  ville str
+  Omlesses list
+  Dons list
+}
+
+Table Omless as O{
+  id int [pk, increment]
+  nom str
+  prenom str
+  etat str
+  ville str
+  Fans list
+  encours enums.eta
+}
+
+Table Video as V{
+  id int [pk, increment]
+  date timestamp
+  lien str [not null]
+  omless_id int [ref: > O.id] 
+}
+
+Table Don as D{
+  id int [pk, increment]
+  date timestamp [note: 'When order created']
+  montant float [default: 1]
+  fan_id int [ref: > F.id] 
+  omless_id int [ref: > O.id] 
+}
+
+// Enum for 'products' table below
+Enum enums.etat {
+  inactif [note: 'En cas de mort ou disparition']
+  actif
+  fini
+}
+
+//Ref: ecommerce.products.merchant_id > ecommerce.merchants.id // many-to-one
+//Ref: ecommerce.product_tags.id <> ecommerce.products.id // many-to-many
