@@ -198,7 +198,7 @@ def ensure_unique_default_per_project(target, value, oldvalue, initiator):
 def refetch_db_session(organization_slug: str) -> Session:
     schema_engine = engine.execution_options(
         schema_translate_map={
-            None: f"dispatch_organization_{organization_slug}",
+            None: f"omless_organization_{organization_slug}",
         }
     )
     db_session = sessionmaker(bind=schema_engine)()
