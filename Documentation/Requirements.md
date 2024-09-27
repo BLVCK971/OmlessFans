@@ -35,7 +35,7 @@ Elements de progression :
 
 ## Sommes
 
-- 30€/mois : Niveau Sandwich (l'équivalent de 1€ par jour
+- 30€/mois : Niveau Sandwich (l'équivalent de 1€ par jour)
 
 
 Pourquoi la somme est limité ? 

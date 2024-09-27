@@ -34,7 +34,6 @@ Table Don as D{
   omless_id int [ref: > O.id] 
 }
 
-// Enum for 'products' table below
 Enum enums.etat {
   inactif [note: 'En cas de mort ou disparition']
   actif
